@@ -30,6 +30,13 @@
       "email": "mattness@users.noreply.github.com"
     }
   ],
+  "nodeRdkafkaConfig": {
+    "binarySite": "https://github.com/qiujie8092916/node-rdkafka/releases/download"
+  },
+  "bin": {
+    "node-rdkafka": "bin/node-rdkafka"
+  },
+  "gypfile": true,
   "license": "MIT",
   "devDependencies": {
     "bluebird": "^3.5.3",
