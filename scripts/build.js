@@ -21,7 +21,7 @@ function afterBuild(options) {
       process.config.target_defaults
         ?  process.config.target_defaults.default_configuration
         : 'Release',
-    'binding.node');
+    'node-librdkafka.node');
 
   fs.mkdir(path.dirname(install), {recursive: true}, function(err) {
     if (err && err.code !== 'EEXIST') {

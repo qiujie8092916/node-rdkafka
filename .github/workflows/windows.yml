@@ -21,7 +21,7 @@ jobs:
 
         architecture:
           - x64
-          - x86
+#          - x86
 
     steps:
       - uses: actions/checkout@v4
@@ -47,5 +47,5 @@ jobs:
         with:
           name: ${{ matrix.node }}-${{ matrix.architecture }}
           path: |
-            vendor/**/binding.node
+            vendor/**/node-librdkafka.node
             build/Release/binding.pdb
