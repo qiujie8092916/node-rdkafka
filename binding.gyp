@@ -28,7 +28,7 @@
       'conditions': [
         ['librdkafka_ext == "" or librdkafka_ext == "no"', {
           'dependencies': [
-            'src/librdkafka.gyp:librdkafka',
+            'deps/librdkafka.gyp:librdkafka',
           ]
         }],
         ['librdkafka_ext == "auto"', {
