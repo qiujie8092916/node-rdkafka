@@ -3,6 +3,7 @@
     # may be redefined in command line on configuration stage
     # "BUILD_LIBRDKAFKA%": "<!(echo ${BUILD_LIBRDKAFKA:-1})"
     "BUILD_LIBRDKAFKA%": "<!(node ./util/get-env.js BUILD_LIBRDKAFKA 1)",
+    "librdkafka_ext%": "",
   },
   "targets": [
     {
@@ -25,6 +26,37 @@
         "<(module_root_dir)/"
       ],
       'conditions': [
+        ['librdkafka_ext == "" or librdkafka_ext == "no"', {
+          'dependencies': [
+            'src/librdkafka.gyp:librdkafka',
+          ]
+        }],
+        ['librdkafka_ext == "auto"', {
+          'cflags_cc': [
+            '<!(pkg-config --cflags librdkafka)',
+          ],
+          'link_settings': {
+            'ldflags': [
+              '<!(pkg-config --libs-only-other --libs-only-L librdkafka)',
+            ],
+            'libraries': [
+              '<!(pkg-config --libs-only-l librdkafka)',
+            ],
+          }
+        }],
+        ['librdkafka_ext == "yes"', {
+          'cflags_cc': [
+            '<(librdkafka_cflags)',
+          ],
+          'link_settings': {
+            'ldflags': [
+              '<(librdkafka_ldflags)',
+            ],
+            'libraries': [
+              '<(librdkafka_library)',
+            ],
+          }
+        }],
         [
           'OS=="win"',
           {
