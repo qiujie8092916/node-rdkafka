@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: node:${{ matrix.node }}-alpine
+      options: --user root
     strategy:
       fail-fast: false
       matrix:
