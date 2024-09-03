@@ -27,6 +27,9 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
+      - name: Install packages
+        run: npm install --unsafe-perm
+
       - name: Run configure
         run: npm run configure
 

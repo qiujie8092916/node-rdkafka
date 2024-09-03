@@ -43,6 +43,9 @@ jobs:
       - name: Setup GCC/G++
         run: sudo apt-get install ${{ matrix.gcc }} ${{ matrix.gpp }}
 
+      - name: Install packages
+        run: npm install --unsafe-perm
+
       - name: Run configure
         run: npm run configure
 
