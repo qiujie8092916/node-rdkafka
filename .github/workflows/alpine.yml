@@ -29,5 +29,5 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - uses: publish
+      - name: publish
         run: npm run publish
