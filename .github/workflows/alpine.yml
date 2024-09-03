@@ -1,0 +1,33 @@
+name: Build bindings for Alpine releases
+
+on:
+  push:
+    branches-ignore:
+      - "dependabot/**"
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: node:${{ matrix.node }}-alpine
+    strategy:
+      fail-fast: false
+      matrix:
+        node:
+          - 16
+          - 18
+          - 19
+          - 20
+
+    steps:
+      - name: Install Alpine build tools
+        run: apk add --no-cache python3 make git gcc g++
+
+      - uses: actions/checkout@v4
+
+      - name: Run tests
+        run: npm test
+
+      - uses: publish
+        run: npm run publish

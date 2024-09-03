@@ -1,15 +1,16 @@
 {
   "name": "node-rdkafka",
-  "version": "v3.1.0",
+  "version": "v3.1.1",
   "description": "Node.js bindings for librdkafka",
   "librdkafka": "2.5.0",
   "main": "lib/index.js",
   "scripts": {
-    "configure": "node-gyp configure",
-    "build": "node-gyp build",
+    "configure": "node-pre-gyp configure",
+    "build": "node-pre-gyp build",
     "test": "make test",
-    "install": "node-gyp rebuild",
-    "prepack": "node ./ci/prepublish.js"
+    "install": "node-pre-gyp rebuild",
+    "prepack": "node ./ci/prepublish.js",
+    "publish": "npm run configure && npm run install && node-pre-gyp package && npm run prepack && node-pre-gyp-github publish --release"
   },
   "keywords": [
     "kafka",
@@ -39,10 +40,18 @@
     "toolkit-jsdoc": "^1.0.0"
   },
   "dependencies": {
+    "@mapbox/node-pre-gyp": "^1.0.11",
     "bindings": "^1.3.1",
-    "nan": "^2.19.0"
+    "nan": "^2.19.0",
+    "node-pre-gyp-github": "^2.0.0"
   },
   "engines": {
     "node": ">=16"
+  },
+  "binary": {
+    "module_name": "node-librdkafka",
+    "module_path": "./build/Release/",
+    "host": "https://github.com/qiujie8092916/node-rdkafka/releases/download/",
+    "remote_path": "{version}"
   }
 }
