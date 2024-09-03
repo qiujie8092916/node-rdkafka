@@ -27,8 +27,17 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
+      - name: Run configure
+        run: npm run configure
+
+      - name: Run install
+        run: npm run install
+
       - name: Run tests
         run: npm test
 
-      - name: publish
+      - name: Run package
+        run: npm run package
+
+      - name: Run publish
         run: npm run publish
