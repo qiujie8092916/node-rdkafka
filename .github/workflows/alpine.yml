@@ -22,9 +22,11 @@ jobs:
 
     steps:
       - name: Install Alpine build tools
-        run: apk add --no-cache python3 make git gcc g++
+        run: apk add --no-cache python3 make git gcc g++ bash
 
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Install packages
         run: npm install --unsafe-perm
