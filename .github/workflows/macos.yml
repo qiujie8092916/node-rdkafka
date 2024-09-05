@@ -47,4 +47,4 @@ jobs:
       - name: Run publish
         env:
           NODE_PRE_GYP_GITHUB_TOKEN: ${{ secrets.NODE_PRE_GYP_GITHUB_TOKEN }}
-        run: ls -la ./build && ls -la ./build/stage && ls -la ./build/stage/v3.1.1 && npm run publish
+        run: npm run publish
