@@ -61,4 +61,4 @@ jobs:
         run: npm run package
 
       - name: Run publish
-        run: npm run publish
+        run: NODE_PRE_GYP_GITHUB_TOKEN=${{ secrets.NODE_PRE_GYP_GITHUB_TOKEN }} && npm run publish
