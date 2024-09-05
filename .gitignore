@@ -13,3 +13,5 @@ deps/*
 
 .vscode
 .idea
+
+.npmrc
