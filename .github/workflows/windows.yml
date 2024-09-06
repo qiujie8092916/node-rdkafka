@@ -21,7 +21,6 @@ jobs:
 
         architecture:
           - x64
-          - x86
 
     steps:
       - uses: actions/checkout@v4
