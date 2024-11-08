@@ -7,7 +7,7 @@
  * of the MIT license.  See the LICENSE.txt file for details.
  */
 
-var addon = require('bindings')('node-librdkafka');
+var addon = require('bindings')('node-rdkafka');
 var t = require('assert');
 
 var client;
