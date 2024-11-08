@@ -50,14 +50,11 @@ jobs:
       - name: Install packages
         run: npm ci
 
-      - name: Run configure
-        run: npm run configure
-
-      - name: Run install
-        run: npm run install
-
       - name: Run tests
         run: npm test
+
+      - name: Run build
+        run: npm run build
 
       - name: Run package
         run: npm run package
