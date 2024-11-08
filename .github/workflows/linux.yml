@@ -59,8 +59,12 @@ jobs:
       - name: Run package
         run: npm run package
 
-      - name: Run publish
+      - name: Run release
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           NODE_PRE_GYP_GITHUB_TOKEN: ${{ secrets.NODE_PRE_GYP_GITHUB_TOKEN }}
         run: npm run publish
+
+      - name: Run publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public
