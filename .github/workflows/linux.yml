@@ -67,4 +67,8 @@ jobs:
       - name: Run publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+          cache: "npm"
         run: npm publish --access public
