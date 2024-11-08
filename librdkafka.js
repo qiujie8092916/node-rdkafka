@@ -7,6 +7,11 @@
  * of the MIT license.  See the LICENSE.txt file for details.
  */
 
-var kafka = require('bindings')('node-librdkafka');
+// var kafka = require('bindings')('node-librdkafka');
+
+var binary = require('@mapbox/node-pre-gyp');
+var path = require('path');
+var binding_path = binary.find(path.resolve(path.join(__dirname,'./package.json')));
+var kafka = require(binding_path);
 
 module.exports = kafka;

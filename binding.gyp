@@ -6,7 +6,7 @@
   },
   "targets": [
     {
-      "target_name": "node-librdkafka",
+      "target_name": "<(module_name)",
       'sources': [
         'src/binding.cc',
         'src/callbacks.cc',
