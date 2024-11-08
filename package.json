@@ -5,11 +5,11 @@
   "librdkafka": "2.5.0",
   "main": "lib/index.js",
   "scripts": {
-    "configure": "node-gyp configure",
-    "build": "node-pre-gyp rebuild",
+    "configure": "node-pre-gyp configure",
+    "build": "node-pre-gyp build",
     "test": "make test",
     "install": "node-pre-gyp install --fallback-to-build",
-    "prepack": "node ./ci/prepublish.js",
+    "pre:build": "node ./ci/prepublish.js",
     "package": "node-pre-gyp package",
     "publish": "node-pre-gyp-github publish --release"
   },
