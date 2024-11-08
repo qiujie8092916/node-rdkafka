@@ -50,9 +50,6 @@ jobs:
       - name: Install packages
         run: npm ci
 
-      - name: Run pre build
-        run: npm run pre:build
-
       - name: Run configure
         run: npm run configure
 
