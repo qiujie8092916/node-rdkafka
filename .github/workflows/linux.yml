@@ -62,12 +62,12 @@ jobs:
       - name: Run package
         run: npm run package
 
-      - name: Run release
+      - name: Run release github
         env:
           NODE_PRE_GYP_GITHUB_TOKEN: ${{ secrets.NODE_PRE_GYP_GITHUB_TOKEN }}
         run: npm run publish
 
-      - name: Run publish
+      - name: Run publish npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish --access public
