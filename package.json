@@ -1,6 +1,6 @@
 {
-  "name": "@prebuilt/node-rdkafka",
-  "version": "3.1.14",
+  "name": "node-rdkafka-prebuilt",
+  "version": "3.1.15",
   "description": "Node.js bindings for librdkafka",
   "librdkafka": "2.5.0",
   "main": "lib/index.js",
