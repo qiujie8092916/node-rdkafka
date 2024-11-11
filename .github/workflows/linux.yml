@@ -70,4 +70,4 @@ jobs:
       - name: Run publish npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --access public
+        run: npm publish --provenance --access public
