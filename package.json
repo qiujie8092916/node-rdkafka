@@ -1,6 +1,6 @@
 {
   "name": "@prebuilt/node-rdkafka",
-  "version": "3.1.13",
+  "version": "3.1.14",
   "description": "Node.js bindings for librdkafka",
   "librdkafka": "2.5.0",
   "main": "lib/index.js",
@@ -55,5 +55,15 @@
     "remote_path": "{version}",
     "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz",
     "host": "https://github.com/qiujie8092916/node-rdkafka/releases/download/"
-  }
+  },
+  "directories": {
+    "example": "examples",
+    "lib": "lib",
+    "test": "test"
+  },
+  "author": "jie.q",
+  "bugs": {
+    "url": "https://github.com/qiujie8092916/node-rdkafka/issues"
+  },
+  "homepage": "https://github.com/qiujie8092916/node-rdkafka#readme"
 }
